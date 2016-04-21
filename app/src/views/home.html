@@ -1,0 +1,36 @@
+<md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+<h2>{{ul.selected.name}}</h2>
+<!--<p>{{ul.selected.content}}</p>-->
+
+<a href="#/postear">
+	<md-button md-no-ink aria-label="Postear">
+		<md-tooltip>Postear</md-tooltip>
+		<md-icon md-svg-icon="add"></md-icon>
+	</md-button>
+</a>
+
+<md-button class="contact" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
+  <md-tooltip>Contact {{ ul.selected.name }}</md-tooltip>
+  <md-icon md-svg-icon="share"></md-icon>
+</md-button>
+
+
+<div id="postsDiv" ng-repeat="post in posts">
+  	<md-card> <!-- md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch -->
+	  <md-card-title layout="row" flex="60">
+	  	<md-card-title-media flex="50">
+	      <!--<div class="md-media-md card-media"></div>-->
+	      <img ng-src="./assets/img/savora.jpg" class="md-media-lg md-card-image" alt="Washed Out">
+	    </md-card-title-media>
+	    <md-card-title-text flex="50">
+	      <span class="md-headline">{{post.Nombre}}</span>
+	      <span class="md-subhead">{{post.Precio | currency}}</span>
+	      <span class="md-subhead">{{post.Zona}}</span>
+	    </md-card-title-text>
+	  </md-card-title>
+	  <md-card-actions layout="row" la layout-align="end center" flex="40">
+	    <md-button>Action 1</md-button>
+	    <md-button>Action 2</md-button>
+	  </md-card-actions>
+	</md-card>
+</div>

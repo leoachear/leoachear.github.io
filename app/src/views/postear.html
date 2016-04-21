@@ -1,0 +1,22 @@
+<div>
+    <h1>Postear</h1>
+    <p>Ingresá los datos para postear</p>
+	<form ng-submit="agregarPost()">
+		<h3>Postear</h3>
+		<div>
+			<label>Nombre Producto:</label>
+			<input type="text" placeholder="Cargue el Nombre del Producto" ng-model="nombre_producto"></input>
+			<label>Precio Producto:</label>
+			<input type="text" placeholder="Cargue el Precio del Producto" ng-model="precio_producto"></input>
+		</div>
+		<button type="submit">Guardar</button>
+	</form>
+
+	<div layout="column" layout-align="center center">
+	    <md-select placeholder="Seleccione la Zona" ng-model="nombre_zona" md-on-open="loadZona()" style="min-width: 200px;">
+	      <md-option ng-value="zona.Nombre" ng-repeat="zona in nombre_zonas">{{zona.Nombre}}</md-option>
+	    </md-select>
+	    <p class="md-caption">Seleccionaste la zona: {{ nombre_zona ? nombre_zona : 'Ninguna' }}</p>
+	</div>
+
+</div>
